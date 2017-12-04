@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"/>
+        <META HTTP-EQUIV="REFRESH" CONTENT="URL=login.xhtml"></META>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        
+        <style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+            border-bottom:1px solid #818181;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px !important;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+            margin-left:40px;
+    }
+    #mySidenav
+    {
+            width:50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .mySidenav {padding-top: 15px;}
+      .mySidenav a {font-size: 18px;}
+    }
+    #but, #ab, #ser, #cl
+    {
+            margin:0 auto;
+            padding:4% 4% 4% 15%;
+    }
+    #but, #ab1, #ser1, #cl1, #con1
+    {
+            display:none;
+            margin-left:4%;
+  
+    }
+    
+    #but, #ab, #ser, #cl, #con1 :hover
+    {
+        text-decoration: none;
+    }
+
+    a img
+    {
+            width:45px;
+    }
+    #profbar
+    {
+            text-align:justify;
+            margin-top:2%;
+    }
+    #profbar div
+    {
+            display:inline-block;
+    }
+    #profbar:after
+    {
+            content: '';
+        display: inline-block;
+        width: 100%;
+    }
+    #prof
+    {
+            float:left;
+            display:inline-block;
+            width:40%;
+            padding: 2%;
+    }
+    #prof form
+    {
+            margin-top: 6%;
+            
+    }
+    #trans
+    {
+            float:right;
+            display:inline-block;
+            width: 50%;
+    }
+    input[type]
+    {
+            border:none;
+    }
+    #help
+    {
+            text-align:justify;
+            margin-top:2%;
+    }
+    #help button
+    {
+            display:inline-block;
+    }
+    #help:after
+    {
+            content: '';
+        display: inline-block;
+        width: 100%;
+    }
+    #gh
+    {
+            padding:3px;
+            color:white;
+            background:#1504AC;
+            width:40%;
+            line-height:5em;
+            cursor:pointer;
+            outline:none;
+    }
+    #ph
+    {
+            padding:3px;
+            color:white;
+            background:#2ED027;
+            width:300px;
+            line-height:5em;
+            cursor:pointer;
+            outline:none;
+    }
+    #pend
+    {
+            text-align:justify;
+            margin-top:2%;
+    }
+    #pend div
+    {
+            display:inline-block;
+    }
+    #pend:after
+    {
+            content: '';
+        display: inline-block;
+        width: 100%;
+    }
+    .pW
+    {
+            width:45%;
+    }
+    .cW
+    {
+            width:45%;
+    }
+    .popup-panel-overlay
+            {
+                background-color: rgba(0,0,0,0.5);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            .popup-panel
+            {
+                margin: 100px 50px 100px 40px;
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                border: 1px solid #DDD;
+                width: 100%;
+            }
+            
+    #hide
+    {
+        margin-left: 5px;
+    }
+    .badge-notify
+    {
+        background:red;
+        position:absolute;
+       display: none;
+  }
+  
+</style>
+    <script>
+     $(document).ready(function()
+    {
+      sessionStorage.setItem("seen_badge", "false");
+        if(sessionStorage.seen_badge === "false") 
+        {
+         $('.badge-notify').show();
+         sessionStorage.removeItem("seen_badge");
+        }
+        $('.badge-notify').on('click', function() {
+           // $(this).hide();
+           sessionStorage.removeItem("seen_badge");
+        });
+    });
+    </script>
+    
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("ab1").style.display="inline";
+            document.getElementById("ser1").style.display="inline";
+            document.getElementById("cl1").style.display="inline";
+            document.getElementById("con1").style.display="inline";
+            document.getElementById("but").style.display="inline";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "50px";
+        document.getElementById("main").style.marginLeft= "40px";
+            document.getElementById("ab1").style.display="none";
+            document.getElementById("ser1").style.display="none";
+            document.getElementById("cl1").style.display="none";
+            document.getElementById("con1").style.display="none";
+            document.getElementById("but").style.display="none";
+    }
+    window.onload = closeNav;
+    
+    // $(document).ready(function()
+   // {
+   //   $(".badge-notify").click(function()
+   //    {
+    //       $(".badge-notify").fadeOut("slow");
+    //   });
+   // });
+   
+</script>
+    </h:head>
+    <h:body>
+        
+        <div id="mySidenav" class="sidenav" onclick="closeNav()"> 
+            <h:outputLink value="" id="but" class="closebtn" onclick="closeNav()" style="border-bottom:none">x</h:outputLink>
+            <h:outputLink value="home.xhtml" id="ab" onclick="closeNav()"><span class="glyphicon glyphicon-home" style=" color: blue;"></span><span id="ab1">Home</span></h:outputLink>		
+            <h:outputLink value="profile.xhtml" id="ser" onclick="closeNav()"><span class="glyphicon glyphicon-user custom"></span><span id="ser1">Profile</span></h:outputLink>
+            <h:outputLink value="transaction.xhtml" id="cl" onclick="closeNav()"><span class="glyphicon glyphicon-briefcase"></span><span class="badge badge-notify">!</span><span id="cl1">Transaction</span></h:outputLink>
+     
+            <h:form> 
+                <div id="test" style=" padding: 2%;">
+                <h:commandLink styleClass="glyphicon glyphicon-log-out" action="#{ctrlLogin.logout()}" id="con" style=" padding: 4%; text-decoration: none; margin-left: 9%; border-bottom: none;">
+             <span id="con1">Logout</span>
+            </h:commandLink>
+                </div> 
+            </h:form> 
+        </div>
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ menu</span>
+       
+            <p style="float:right; font-size:17px">Welcome, #{ctrlLogin.session.fname} #{ctrlLogin.session.sname}</p>
+            
+            
+            <div id="profbar">
+                <div id="prof">
+                   <!-- <b:icon name="user" size="3x"/>-->
+                   <span class="glyphicon glyphicon-user" style=" font-size: 50px;"></span>
+                    <h:form>
+                <h:outputLabel>Name:</h:outputLabel>
+                <h:inputText value="#{ctrlLogin.session.fname} #{ctrlLogin.session.sname}" readonly="true" /><br/><br/>
+                <h:outputLabel>Phone:</h:outputLabel>
+                <h:inputText value="#{ctrlLogin.session.pnumber}" readonly="true"/><br/><br/>
+                <h:outputLabel>Email:</h:outputLabel>
+                <h:inputText value="#{ctrlLogin.session.email}" readonly="true" style=" width: 200px;"/><br/><br/>
+                <h:outputLink value="profile.xhtml">Edit</h:outputLink>
+                    </h:form> 
+
+                </div>
+                <div id="trans">
+                <span> Successful Transaction: </span>
+                <span>Failed Transaction: </span>
+                <datalist>
+
+                </datalist>
+                </div>
+                </div>
+                <div id="status">
+                    <h3>Current Package: ##{ctrlLogin.session.pac} <span></span></h3>
+                    <h:form>     
+                        <h:commandLink value="Click here to change package" action="#{ctrlLogin.show()}">
+                        <f:ajax render="@form"/>
+                        </h:commandLink>
+                        <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{ctrlLogin.showPopup}">
+            <div class="popup-panel">
+                <h:selectOneRadio  value="#{ctrlLogin.pac}" required="true" style=" display: block">
+                        <f:selectItem itemValue="5000" itemLabel="#5000" />
+                        <f:selectItem itemValue="10000" itemLabel="#10000"/>
+                        <f:selectItem itemValue="20000" itemLabel="#20000"/>
+                        <f:selectItem itemValue="50000" itemLabel="50000"/>
+                </h:selectOneRadio>
+                
+                <h:commandButton value="Submit" action="#{ctrlLogin.updatPac()}"/>
+                
+                <h:commandButton value="hide details" style=" margin-left: 4px;" action="#{ctrlLogin.hide()}">
+                <f:ajax render="@form"/>
+            </h:commandButton>
+                
+            </div>
+        </h:panelGroup> 
+                    </h:form> 
+                <div id="help">
+                    <h:form>
+                        
+                        <h:commandButton  value="Get Help" id="gh"  style=" background-color: #1504AC; width: 300px; height: 70px; color: white; outline: none;" />
+                    <h:commandButton value="Provide Help" id="ph" action="#{ctrlLogin.ph()}" style=" margin-top: 10px; margin-left: 10px; width: 300px; height: 70px;
+                                     background-color:#2ED027; color: white; outline: none">
+                        
+                    </h:commandButton>
+                    </h:form>
+                </div>
+                <div id="pend">
+                <h3>Status:</h3>
+                <div class="pW">
+                <p>Pending wallet: </p>
+                </div >
+                <div class="cW">
+                <p>Current wallet: </p>
+                </div>
+                </div>
+                </div> 
+        </div>
+        
+    </h:body> 
+</html>
+

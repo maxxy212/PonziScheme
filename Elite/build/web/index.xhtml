@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    
+    <head>
+        <title>Facelet Title</title>
+        <meta charset="utf-8"/>
+    <title>Elite</title>
+    <meta name="author" content="Adtile"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!--<META HTTP-EQUIV="REFRESH" CONTENT="30"></META>-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link rel="stylesheet" href="css/ie.css">
+    <![endif]-->
+    <link rel="stylesheet" href="css/nav.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+        <script src="js/responsive-nav.js"></script>
+    </head>
+    <body>
+        <header id="header">
+      <a href="#home" class="logo">Elite Club</a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="#home">Home</a></li>
+          <li class="menu-item"><a href="#about">About Us</a></li>
+          <li class="menu-item"><a href="#projects">Our Packages</a></li>
+          <li class="menu-item"><a href="#login" >Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section jsf:id="home">
+     <div id="signup">
+<div id="signup-overlay">
+<div id="writeup">
+<h1 class="text-white">Connecting People, Creating Wealth Get 100% (x2) of your Investments minimum of 5 mins and maximum of 14 days.</h1>
+<h3 class="text-light">
+Wealth is a Loop, Change your Live by Joining Elite.
+<strong>You do not need to Refer anybody</strong>, we merge you ourselves automatically and you receive your payment
+</h3>
+</div>
+<div id="pad">
+<h3>Sign Up</h3><br/>
+<fcore:view>
+                <h:form>
+                    <h:panelGrid border="0" cellpadding="20" cellspacing="10" columns="3">
+                        <h:outputLabel value="Phone Number"/>
+                        <h:inputText value="#{clientBean.pnumber}" required="true" id="pid" tabindex="1" pt:placeholder="Phone Number" requiredMessage="Phone Number is requried">
+                            
+                        </h:inputText><h:message for="pid"/>
+                        <h:outputLabel value="First Name"/>
+                        <h:inputText value="#{clientBean.fname}" required="true" id="fid" tabindex="2" pt:placeholder="First Name" requiredMessage="Name is requried">
+                            
+                        </h:inputText><h:message for="fid"/>
+                        <h:outputLabel value="Surname"/>
+                        <h:inputText value="#{clientBean.sname}" required="true" id="sid" tabindex="3" pt:placeholder="Surname" requiredMessage="Surname is requried">
+                            
+                        </h:inputText><h:message for="sid"/>
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{clientBean.email}" required="true" id="eid" tabindex="4" pt:placeholder="E-mail" requiredMessage="Email is requried">
+                            
+                        </h:inputText><h:message for="eid"/>
+                        <h:outputLabel value="Bank"/>
+                        <h:inputText value="#{clientBean.bank}" required="true" id="bid" tabindex="5" pt:placeholder="Bank" requiredMessage="Bank is requried">
+                           
+                        </h:inputText> <h:message for="bid"/>
+                        <h:outputLabel value="Account"/>
+                        <h:inputText value="#{clientBean.acc}" required="true" id="aid" tabindex="6" pt:placeholder="Account Number" requiredMessage="Account Number is requried">
+                          
+                        </h:inputText> <h:message for="aid"/>
+                        <h:outputLabel value="Account Name"/>
+                        <h:inputText value="#{clientBean.accname}" required="true" id="anid" tabindex="7" pt:placeholder="Account Name" requiredMessage="Account Name is requried">   
+                                
+                        </h:inputText><h:message for="anid"/>
+                        <h:outputLabel value="Password"/>
+                        <h:inputText value="#{clientBean.password}" required="true" id="paid" tabindex="8" pt:placeholder="Password" requiredMessage="passowrd is requried">
+                            
+                        </h:inputText><h:message for="paid"/>
+                        <h:outputLabel value="Gender"/>
+                        <h:selectOneRadio  id="gid" value="#{clientBean.gender}" required="true" tabindex="9" requiredMessage="Gender is required">
+                        <f:selectItem itemValue="Male" itemLabel="Male" />
+                        <f:selectItem itemValue="Female" itemLabel="Female" />
+                </h:selectOneRadio><h:message for="gid"/>
+                        <h:outputLabel value="Package"/>
+                        <h:inputText value="#{clientBean.pac}" required="true" id="pac" tabindex="10" pt:placeholder="Package" requiredMessage="package is requried">
+                            
+                        </h:inputText><h:message for="pac"/>
+                        <h:commandLink value="Update" action="ListStudent" actionListener="#{clientBean.add()}">
+                        
+                        </h:commandLink>
+                    </h:panelGrid>
+                </h:form>
+            </fcore:view>
+</div>
+</div>
+</div>
+
+    </section>
+    
+    <section id="about">
+      <h1 class="title">About Us, What We stand For.</h1>
+<p class="text">The company was founded by a team of enthusiastic humanitarian specialists who wanted to overcome the routine and create a platform that would act in the market not only for business success but for the sake of humanitarian and financial empowerment services.</p>
+<div class="vision">
+<h4>VISION</h4>
+<img src="img/1487304928_glasses.png" alt=""/>
+<p class="text-muted">
+We believe that the ability to live the routine you wish without having to work or rely on anyone else for cash.
+</p>
+</div>
+<div class="value">
+<img src="img/hands_icon.png" alt=""/>
+<h4>VALUES</h4>
+<p class="text-muted">The well being of the populace are our long-term lead. The commitment of our members sets us stand out from the crowd, while we develop people for the enduring liability in a real-time process.
+</p>
+</div>
+<div class="aim">
+<img src="img/1487304891_target.png" alt=""/>
+<h4>AIM</h4>
+<p class="text-muted">
+To provide the system and support needed to enable our members achieve our vision.
+</p>
+</div>
+
+    </section>
+
+    <section id="projects">
+      <h1>Our Packages</h1>
+      <div class="group">
+      <h3 class="plan-title">Start Package</h3>
+        <h4 class="plan-info">You Pay</h4>
+        <h2 class="plan-price">₦ 5,000</h2>
+        <h4 class="plan-info">You Earn</h4>
+        <h2 class="plan-price">₦ 10,000</h2>
+        <h5 class="plan-duration">In 7 - 14 Days</h5><br/><br/>
+        <button id="reg" type="submit">Register</button>
+      </div>
+      <div class="group">
+      <h3 class="plan-title">Start Package</h3>
+        <h4 class="plan-info">You Pay</h4>
+        <h2 class="plan-price">₦ 10,000</h2>
+        <h4 class="plan-info">You Earn</h4>
+        <h2 class="plan-price">₦ 20,000</h2>
+        <h5 class="plan-duration">In 7 - 14 Days</h5><br/><br/>
+        <button id="reg" type="submit">Register</button>
+      </div>
+      <div class="group">
+      <h3 class="plan-title">Start Package</h3>
+        <h4 class="plan-info">You Pay</h4>
+        <h2 class="plan-price">₦ 20,000</h2>
+        <h4 class="plan-info">You Earn</h4>
+        <h2 class="plan-price">₦ 40,000</h2>
+        <h5 class="plan-duration">In 7 - 14 Days</h5><br/><br/>
+        <button id="reg" type="submit">Register</button>
+      </div>
+      <div class="group">
+      <h3 class="plan-title">Start Package</h3>
+        <h4 class="plan-info">You Pay</h4>
+        <h2 class="plan-price">₦ 50,000</h2>
+        <h4 class="plan-info">You Earn</h4>
+        <h2 class="plan-price">₦ 100,000</h2>
+        <h5 class="plan-duration">In 7 - 14 Days</h5><br/><br/>
+        <button id="reg" type="submit">Register</button>
+      </div>
+    </section>
+
+    <section id="login">
+    <h1 style="text-align:center">Login</h1>
+     <div id="log">
+     <form jsf:id="formm">
+     <label>Phone Number:</label>
+     <h:inputText id="pnum" value="#{ctrlLogin.pnumber}" pt:placeholder="Phone Number" autocomplete="on"/><br /><br/>
+    <label>Password:</label>
+    <h:inputSecret id="password" value="#{ctrlLogin.password}" required="true" pt:placeholder="Password"/><br/><br/>
+    <button id="logg" jsf:action="#{ctrlLogin.login()}">Login</button><br/><br/>
+    <h:outputText id="test" value="" binding="#{ctrlLogin.component}"/>
+            <h:message for="test" style="color: red;"/>
+
+     </form>
+         
+        
+         
+     </div>
+    </section>
+    <footer id="foot">
+    <div class="elite">
+     <h3>Elite Group</h3>
+     <ul>
+     <li>Home</li>
+     <li>Login</li>
+     <li>Register</li>
+     </ul>
+     </div>
+     <div class="support">
+     <h3>Support</h3>
+     <ul>
+         <li>Help &amp; Support</li>
+     <li>FAQ</li>
+     </ul>
+     </div>
+     <h4 style="margin-top:7%;">2017 &copy; Copyright of Elite Group</h4>
+    </footer>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/smooth.js"></script>
+
+   
+     <script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
+    
+    <script type="text/javascript" src="js/auto.js"></script>
+    <a href="#home" id="go-top"><img src="img/1487361005_BT_arrow_top.png" alt=""></img></a>
+    <script>
+        function keepMeAlive(imgName) {
+   myImg = document.getElementById(imgName);
+   if (myImg) myImg.src = myImg.src.replace(/?.*$/, '?' + Math.random());
+}
+window.setInterval("keepMeAlive('go-top')", 100000);
+    </script>
+    </body>
+</html>
+

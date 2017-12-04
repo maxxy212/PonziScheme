@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"/>
+        <META HTTP-EQUIV="REFRESH" CONTENT="URL=login.xhtml"></META>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        
+        <style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+            border-bottom:1px solid #818181;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+            margin-left:40px;
+    }
+    #mySidenav
+    {
+            width:50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .mySidenav {padding-top: 15px;}
+      .mySidenav a {font-size: 18px;}
+    }
+    
+    #but,#ab,#ser,#cl:hover, .offcanvas #but,#ab,#ser,#cl:focus
+    {
+        background: none;
+    }
+
+</style>
+    
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("ab1").style.display="inline";
+            document.getElementById("ser1").style.display="inline";
+            document.getElementById("cl1").style.display="inline";
+            document.getElementById("con1").style.display="inline";
+            document.getElementById("but").style.display="inline";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "50px";
+        document.getElementById("main").style.marginLeft= "40px";
+            document.getElementById("ab1").style.display="none";
+            document.getElementById("ser1").style.display="none";
+            document.getElementById("cl1").style.display="none";
+            document.getElementById("con1").style.display="none";
+            document.getElementById("but").style.display="none";
+    }
+    window.onload = closeNav;
+   
+</script>
+    </h:head>
+    <h:body>
+        
+        <div id="mySidenav" class="sidenav" onclick="closeNav()">
+            <b:listLinks>
+                <b:navLink value=""  id="but" class="closebtn" onclick="closeNav()" icon="remove" ></b:navLink>
+                <b:navLink value="" id="ab" onclick="closeNav()" icon="home"><span id="ab1">Home</span></b:navLink>		
+                <b:navLink value="" id="ser" onclick="closeNav()" icon="user"><span id="ser1">Profile</span></b:navLink>		
+                <b:navLink href="#" value="" id="cl" onclick="closeNav()" icon="briefcase"><span id="cl1">Transaction</span></b:navLink>
+            <h:form> 
+                <div id="test" style=" padding: 2%;">
+                <h:commandLink styleClass="glyphicon glyphicon-log-out" action="#{ctrlLogin.logout()}" id="con" style=" padding: 4%; text-decoration: none; margin-left: 9%; border-bottom: none;">
+             <span id="con1">Logout</span>
+            </h:commandLink>
+                </div>
+            </h:form> 
+            </b:listLinks>
+        </div>
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ menu</span>
+        </div>
+        
+    </h:body>
+</html>
+

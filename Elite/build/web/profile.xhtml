@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"/>
+        <META HTTP-EQUIV="REFRESH" CONTENT="URL=login.xhtml"></META>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    
+        
+        <style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+            border-bottom:1px solid #818181;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px !important;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+            margin-left:40px;
+    }
+    #mySidenav
+    {
+            width:50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .mySidenav {padding-top: 15px;}
+      .mySidenav a {font-size: 18px;}
+    }
+    #but, #ab, #ser, #cl
+    {
+            margin:0 auto;
+            padding:4% 4% 4% 15%;
+    }
+    #but, #ab1, #ser1, #cl1, #con1
+    {
+            display:none;
+            margin-left:4%;
+  
+    }
+    
+    #but, #ab, #ser, #cl, #con1 :hover
+    {
+        text-decoration: none;
+    }
+
+    a img
+    {
+            width:45px;
+    }
+    #prof
+    {
+            margin-left:10%;
+            margin-top:5%;
+    }
+    #edit
+    {
+            text-decoration:underline;
+            list-style-type:none;
+            display:inline;
+            cursor:pointer;
+            color:#2403CF;
+            float:left;
+            margin-right:5%;
+    }
+    #edit li:hover
+    {
+            color:#7BAEF4;
+
+    }
+    input[readonly] { 
+        border: none;
+                    background: none;
+                }
+                
+    .popup-panel-overlay
+            {
+                background-color: rgba(0,0,0,0.5);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            .popup-panel
+            {
+                margin: 100px 50px 100px 40px;
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                border: 1px solid #DDD;
+                width: 100%;
+            }
+            
+    #hide
+    {
+        margin-left: 5px;
+    }
+    .badge-notify
+    {
+        background:red;
+        position:absolute;
+       display: none;
+  }
+    
+
+</style>
+    
+    <script>
+       $(document).ready(function()
+    {
+      sessionStorage.setItem("seen_badge", "false");
+        if(sessionStorage.seen_badge === "false") 
+        {
+         $('.badge-notify').show();
+         sessionStorage.removeItem("seen_badge");
+        }
+        $('.badge-notify').on('click', function() {
+           // $(this).hide();
+           sessionStorage.removeItem("seen_badge");
+        });
+    });
+    </script>
+    
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("ab1").style.display="inline";
+            document.getElementById("ser1").style.display="inline";
+            document.getElementById("cl1").style.display="inline";
+            document.getElementById("con1").style.display="inline";
+            document.getElementById("but").style.display="inline";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "50px";
+        document.getElementById("main").style.marginLeft= "40px";
+            document.getElementById("ab1").style.display="none";
+            document.getElementById("ser1").style.display="none";
+            document.getElementById("cl1").style.display="none";
+            document.getElementById("con1").style.display="none";
+            document.getElementById("but").style.display="none";
+    }
+    window.onload = closeNav;
+    
+   
+</script>
+    
+    </h:head>
+    <h:body>
+        
+        <div id="mySidenav" class="sidenav" onclick="closeNav()"> 
+            <h:outputLink value="" id="but" class="closebtn" onclick="closeNav()" style="border-bottom:none">x</h:outputLink>
+            <h:outputLink value="home.xhtml" id="ab" onclick="closeNav()"><span class="glyphicon glyphicon-home"></span><span id="ab1">Home</span></h:outputLink>		
+            <h:outputLink value="profile.xhtml" id="ser" onclick="closeNav()"><span class="glyphicon glyphicon-user" style=" color: blue;"></span><span id="ser1">Profile</span></h:outputLink>		
+            <h:outputLink value="transaction.xhtml" id="cl" onclick="closeNav()"><span class="glyphicon glyphicon-briefcase"><span class="badge badge-notify">!</span></span><span id="cl1">Transaction</span></h:outputLink>
+            <h:form> 
+                <div id="test" style=" padding: 2%;">
+                <h:commandLink styleClass="glyphicon glyphicon-log-out" action="#{ctrlLogin.logout()}" id="con" style=" padding: 4%; text-decoration: none; margin-left: 9%; border-bottom: none;">
+             <span id="con1">Logout</span>
+            </h:commandLink>
+                </div>
+            </h:form> 
+        </div>
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ menu</span>
+        <h:panelGroup rendered="#{not empty session}">
+            <p style="float:right; font-size:17px">#{ctrlLogin.session.fname} #{ctrlLogin.session.sname}</p>
+        </h:panelGroup>
+            
+            <div id="profbar">
+                <div id="prof">
+                   <!-- <b:icon name="user" size="3x"/>-->
+                   <span class="glyphicon glyphicon-user" style=" font-size: 50px;"></span>
+                   
+                   <h:form style="margin-top: 40px;">
+                        <h:panelGrid border="0" cellpadding="20" cellspacing="30" columns="2" rules="rows" >
+                        <h:outputLabel value="Phone Number"/>
+                        <h:inputText value="#{ctrlLogin.session.pnumber}" readonly="true">
+                           
+                        </h:inputText>
+                        <h:outputLabel value="First Name"/>
+                        <h:inputText value="#{ctrlLogin.session.fname}" readonly="true">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Surname"/>
+                        <h:inputText value="#{ctrlLogin.session.sname}" readonly="true">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{ctrlLogin.session.email}" readonly="true" style=" width: 200px;">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Bank"/>
+                        <h:inputText value="#{ctrlLogin.session.bank}" readonly="true">
+                           
+                        </h:inputText>
+                        <h:outputLabel value="Account Number"/>
+                        <h:inputText value="#{ctrlLogin.session.acc}" readonly="true">
+                          
+                        </h:inputText> 
+                        <h:outputLabel value="Account Name"/>
+                        <h:inputText value="#{ctrlLogin.session.accname}" readonly="true" style=" width: 200px;">   
+                                
+                        </h:inputText>
+                        <h:outputLabel value="Password"/>
+                        <h:inputText value="#{ctrlLogin.session.password}" readonly="true">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Gender"/>
+                        <h:selectOneRadio value="#{ctrlLogin.session.gender}" readonly="true">
+                            <f:selectItem  itemValue="Male" itemLabel="Male" itemDisabled="true" />
+                        <f:selectItem itemValue="Female" itemLabel="Female" itemDisabled="true"/>
+                        
+                </h:selectOneRadio>
+                        <h:outputLabel value="Package"/>
+                        <h:inputText value="#{ctrlLogin.session.pac}" readonly="true">
+                            
+                        </h:inputText>
+                        <h:commandLink>
+                        
+                        </h:commandLink>
+                    </h:panelGrid>
+                       
+                    </h:form> 
+                   
+                   <h:form>
+                       <h:commandLink value="Edit" action="#{ctrlLogin.show()}">
+                        <f:ajax render="@form"/>
+                        </h:commandLink>
+                        <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{ctrlLogin.showPopup}">
+                            <div class="popup-panel">
+                <h:panelGrid border="0" cellpadding="20" cellspacing="30" columns="2" rules="rows" >
+                        <h:outputLabel value="First Name"/>
+                        <h:inputText value="#{ctrlLogin.fname}">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Surname"/>
+                        <h:inputText value="#{ctrlLogin.sname}">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{ctrlLogin.email}">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Bank"/>
+                        <h:inputText value="#{ctrlLogin.bank}">
+                           
+                        </h:inputText>
+                        <h:outputLabel value="Account Number"/>
+                        <h:inputText value="#{ctrlLogin.acc}">
+                          
+                        </h:inputText> 
+                        <h:outputLabel value="Account Name"/>
+                        <h:inputText value="#{ctrlLogin.accname}">   
+                                
+                        </h:inputText>
+                        <h:outputLabel value="Password"/>
+                        <h:inputText value="#{ctrlLogin.password}">
+                            
+                        </h:inputText>
+                        <h:outputLabel value="Gender"/>
+                        <h:selectOneRadio value="#{ctrlLogin.gender}">
+                            <f:selectItem  itemValue="Male" itemLabel="Male" />
+                        <f:selectItem itemValue="Female" itemLabel="Female"/>
+                        
+                </h:selectOneRadio>
+                        <h:commandLink>
+                        
+                        </h:commandLink>
+                    </h:panelGrid>
+                
+                                <h:commandButton value="Submit" action="#{ctrlLogin.updatAll()}">
+                                    
+                                </h:commandButton>
+                
+                <h:commandButton value="hide details" style=" margin-left: 4px;" action="#{ctrlLogin.hide()}">
+                <f:ajax render="@form"/>
+            </h:commandButton>
+                
+            </div>
+        </h:panelGroup> 
+                   </h:form>
+
+                </div>
+                </div>
+
+            
+        </div>
+        
+    </h:body>
+</html>
+

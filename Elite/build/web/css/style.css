@@ -1,0 +1,302 @@
+@charset "utf-8";
+/* CSS Document */
+
+#button
+{
+	padding:3px;
+	color:white;
+	background:#2ED027;
+	width:50%;
+	line-height:200%;
+	cursor:pointer;
+	outline:none;
+}
+#button:hover {background-color: #0B9812}
+
+#button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+#sector
+{
+	
+}
+
+#signup
+{
+	background-image:url(../img/GrowMoney.jpg);
+	background-size:cover;
+	background-position:center center;
+	position:relative;
+	top:0;
+	bottom:0;
+	height:100vh;
+	
+}
+#signup p
+{
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-weight:bolder;
+	color:rgba(252,248,248,1.00);
+}
+
+#signup-overlay
+{
+
+	position:absolute;
+	top:0;
+	bottom:0;
+	height:100vh;
+	width:100%;
+
+	background-color:rgba(0,0,0,0.5);
+}
+
+#pad
+{
+	margin-top:5%;
+	float:right;
+	width:45%;
+	color:#2ED027;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-weight:bold;
+	font-size:20px;
+	z-index:5;
+}
+#writeup
+{
+	margin-top:5%;
+	float:left;
+	width:50%;
+	text-align:center;
+	color:#F5EEEE;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+#about
+{
+	text-align:center;
+}
+.title
+{
+	margin-top:2%;
+}
+#about
+{
+
+}
+.vision
+{
+	float:left;
+	text-align:center;
+	width:30%;
+	padding:2% 0% 2% 0%;
+}
+.value
+{
+	display:inline-block;
+	text-align:center;
+	width:30%;
+	margin:0 auto;
+	padding:2% 0% 2% 0%;
+}
+.aim
+{
+	float:right;
+	text-align:center;
+	width:30%;
+	padding:2% 0% 2% 0%;
+}
+#projects
+{
+	text-align:justify;
+	background:#EDE6E6;
+}
+#projects h1
+{
+	text-align:center;
+	padding-top:2%;
+}
+
+#projects div
+{
+	display:inline-block;
+}
+#projects:after
+{
+	content: '';
+    display: inline-block;
+    width: 100%;
+}
+.group
+{
+	padding:3% 3% 2% 3%;
+	border:1px solid #2ED027;
+	margin:1% 1% 1% 1%;
+}
+#reg
+{
+	padding:3px;
+	color:white;
+	background:#2ED027;
+	width:100%;
+	line-height:200%;
+	cursor:pointer;
+	 border-radius: 30px;
+    moz-border-radius: 30px;
+    webkit-border-radius: 30px;
+	outline:none;
+	box-shadow: 0 1px white;
+
+}
+#reg:hover {
+	background-color: white;
+	color:#0B9812;
+	
+	}
+#reg:active
+{
+	box-shadow: none !important;
+}
+.plan-title
+{
+	color:#2ED027;
+	text-align:center;
+	margin:0% 0% 5% 0%;
+}
+.plan-info
+{
+	text-align:center;
+	margin-bottom:10%;
+}
+.plan-price
+{
+	text-align:center;
+}
+.plan-duration
+{
+	text-align:center;
+	margin-top:5%;
+}
+#login
+{
+	text-align:center;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+#login h1
+{
+	
+	margin-bottom:2%;
+	margin-top:2%;
+}
+#log
+{
+	border:1px solid green;
+	border-radius:10px;
+	text-align:justify;
+	width:30%;
+	margin:0 auto 2% auto;
+	padding:2%;
+}
+#logg
+{
+	padding:3px;
+	color:white;
+	background:#2ED027;
+	width:50%;
+	line-height:200%;
+	cursor:pointer;
+	 border-radius: 30px;
+    moz-border-radius: 30px;
+    webkit-border-radius: 30px;
+	outline:none;
+	box-shadow: 0 1px white;
+}
+#logg:hover {
+	background-color: white;
+	color:#0B9812;
+	
+	}
+#logg:active
+{
+	box-shadow: none !important;
+}
+#go-top
+{
+	display:-ms-box;
+	-ms-box-flex: 1;
+	width: auto;
+	height: 40px;
+	bottom: 10px;
+	margin-left:97%;
+	position:fixed;
+	background-color:rgba(153,153,153,0.4);
+}
+#foot
+{
+	text-align:justify;
+	background:#888383;
+}
+#foot h1
+{
+	text-align:center;
+	padding-top:2%;
+}
+
+#foot div
+{
+	display:inline-block;
+}
+#foot:after
+{
+	content: '';
+    display: inline-block;
+    width: 100%;
+}
+#foot h4
+{
+	text-align:center;
+}
+.elite
+{
+	text-align:justify;
+	margin-left:20%;
+	margin-top:4%;
+}
+.elite ul
+{
+	text-decoration:none;
+	list-style-type:none;
+	padding:10%;
+	cursor:pointer;
+}
+.elite ul li
+{
+	padding:10%;
+}
+.elite ul li:hover
+{
+	text-decoration:underline;
+}
+.support
+{
+	float:right;
+	margin-right:20%;
+	margin-top:4%;
+}
+.support ul
+{
+	text-decoration:none;
+	list-style-type:none;
+	padding:10%;
+	cursor:pointer;
+	width:auto;
+}
+.support ul li
+{
+	padding:10%;
+}
+.support ul li:hover
+{
+	text-decoration:underline;
+}
